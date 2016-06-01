@@ -1,0 +1,64 @@
+﻿@model AntiDrugWeb4.Models.news
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h3>Edit</h3>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal" style="font-size:15px">
+        <h4>news</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.newsID)
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                News Titile
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.newsTitile, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.newsTitile, "", new { @class = "text-danger" })
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                News Detail
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.newsDetails, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.newsDetails, "", new { @class = "text-danger" })
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                News Date
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.newsDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.newsDate, "", new { @class = "text-danger" })
+            </div>
+        </div> 
+
+        <div class="form-group" style="font-size:15px">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-success" style="font-size:15px"/>
+            </div>
+        </div>
+    </div>
+}
+
+<div style="font-size:15px">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

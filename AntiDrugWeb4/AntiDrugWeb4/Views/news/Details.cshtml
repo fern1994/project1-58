@@ -1,0 +1,42 @@
+﻿@model AntiDrugWeb4.Models.news
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>News Details</h3>
+
+<div style="font-size:15px">
+    <h4>news</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            News Titile
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.newsTitile)
+        </dd> <br />
+
+        <dt>
+            News Detail
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.newsDetails)
+        </dd> <br />
+
+        <dt>
+            News Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.newsDate)
+        </dd> <br />
+
+    </dl>
+</div>
+<p style="font-size:15px">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.newsID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

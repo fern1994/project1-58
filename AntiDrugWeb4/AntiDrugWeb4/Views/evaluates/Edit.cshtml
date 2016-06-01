@@ -1,0 +1,140 @@
+﻿@model AntiDrugWeb4.Models.evaluate
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h3>Edit</h3>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal" style="font-size:15px">
+        <h4>Patient evaluate</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.evaluateID)
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Patient IDCard 
+            </strong>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.patientIDCard, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.patientIDCard, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Patient Name
+            </strong>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.patientName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.patientName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Patient Lastname
+            </strong>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.patientLastname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.patientLastname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Patient Age
+            </strong>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.patientAge, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.patientAge, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Patient Address
+            </strong>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.patientAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.patientAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Evaluate Point
+            </strong>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.evaluatePoint, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.evaluatePoint, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Drug Type
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.drugType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.drugType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Evaluate Result
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.evaluateResult, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.evaluateResult, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Evaluate Date
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.evaluateDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.evaluateDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Evaluate By StaffID
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.evaluateByStaffID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.evaluateByStaffID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-success"  style="font-size:15px"/>
+            </div>
+        </div>
+    </div>
+}
+
+<div style="font-size:15px">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

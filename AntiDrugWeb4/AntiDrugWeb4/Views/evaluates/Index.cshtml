@@ -1,0 +1,95 @@
+﻿@model IEnumerable<AntiDrugWeb4.Models.evaluate>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Patient Evaluate</h2>
+
+<p style="font-size:15px">
+    @Html.ActionLink("Create new evaluate", "Create")
+
+    @using (Html.BeginForm("Index", "evaluates", FormMethod.Get))
+    {
+    <p style="font-size:15px">
+        Patient Name: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter" class="btn btn-warning" style="font-size:15px"/>
+    </p>
+    } <br />
+</p>
+<table class="table table-hover" style="font-size:15px">
+    <tr>
+        <th>
+            Patient IDCard
+        </th>
+        <th>
+            Patient Name
+        </th>
+        <th>
+            Patient Lastname
+        </th>
+        <th>
+            Patient Age
+        </th>
+        <th>
+            Patient Address
+        </th>
+        <th>
+            Evaluate Point
+        </th>
+        <th>
+            Drug Type
+        </th>
+        <th>
+            Evaluate Result
+        </th>
+        <th>
+            Evaluate Date
+        </th>
+        <th>
+            Evaluate By StaffID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.patientIDCard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.patientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.patientLastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.patientAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.patientAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.evaluatePoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.drugType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.evaluateResult)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.evaluateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.evaluateByStaffID)
+        </td>
+        <td style="font-size:15px">
+            @Html.ActionLink("Edit", "Edit", new { id=item.evaluateID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.evaluateID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.evaluateID })
+        </td>
+    </tr>
+}
+
+</table>

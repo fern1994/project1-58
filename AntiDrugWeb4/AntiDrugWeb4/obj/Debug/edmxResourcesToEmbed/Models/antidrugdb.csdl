@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="antidrugdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="alertmeeting">
+    <Key>
+      <PropertyRef Name="alertID" />
+    </Key>
+    <Property Name="alertID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="meetingDate" Type="DateTime" Nullable="false" />
+    <Property Name="meetingTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="meetingDetail" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="meetingSummary" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="meetingByStaffID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="evaluate">
+    <Key>
+      <PropertyRef Name="evaluateID" />
+    </Key>
+    <Property Name="evaluateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="patientIDCard" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="patientName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="patientLastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="patientAge" Type="Int32" Nullable="false" />
+    <Property Name="patientAddress" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="evaluatePoint" Type="Int32" Nullable="false" />
+    <Property Name="drugType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="evaluateResult" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="evaluateDate" Type="DateTime" Nullable="false" />
+    <Property Name="evaluateByStaffID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="news">
+    <Key>
+      <PropertyRef Name="newsID" />
+    </Key>
+    <Property Name="newsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="newsTitile" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="newsDetails" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="newsDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="staffID" />
+    </Key>
+    <Property Name="staffID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="staffName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="staffLastname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="staffAddress" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="staffTel" Type="Int32" Nullable="false" />
+    <Property Name="staffUsername" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="staffPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="antidrugdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="alertmeeting" EntityType="Self.alertmeeting" />
+    <EntitySet Name="evaluate" EntityType="Self.evaluate" />
+    <EntitySet Name="news" EntityType="Self.news" />
+    <EntitySet Name="staff" EntityType="Self.staff" />
+  </EntityContainer>
+</Schema>

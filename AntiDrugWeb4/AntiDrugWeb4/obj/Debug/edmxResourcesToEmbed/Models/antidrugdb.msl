@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="antidrugdbModelStoreContainer" CdmEntityContainer="antidrugdbEntities">
+    <EntitySetMapping Name="alertmeeting">
+      <EntityTypeMapping TypeName="antidrugdbModel.alertmeeting">
+        <MappingFragment StoreEntitySet="alertmeeting">
+          <ScalarProperty Name="alertID" ColumnName="alertID" />
+          <ScalarProperty Name="meetingDate" ColumnName="meetingDate" />
+          <ScalarProperty Name="meetingTitle" ColumnName="meetingTitle" />
+          <ScalarProperty Name="meetingDetail" ColumnName="meetingDetail" />
+          <ScalarProperty Name="meetingSummary" ColumnName="meetingSummary" />
+          <ScalarProperty Name="meetingByStaffID" ColumnName="meetingByStaffID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="evaluate">
+      <EntityTypeMapping TypeName="antidrugdbModel.evaluate">
+        <MappingFragment StoreEntitySet="evaluate">
+          <ScalarProperty Name="evaluateID" ColumnName="evaluateID" />
+          <ScalarProperty Name="patientIDCard" ColumnName="patientIDCard" />
+          <ScalarProperty Name="patientName" ColumnName="patientName" />
+          <ScalarProperty Name="patientLastname" ColumnName="patientLastname" />
+          <ScalarProperty Name="patientAge" ColumnName="patientAge" />
+          <ScalarProperty Name="patientAddress" ColumnName="patientAddress" />
+          <ScalarProperty Name="evaluatePoint" ColumnName="evaluatePoint" />
+          <ScalarProperty Name="drugType" ColumnName="drugType" />
+          <ScalarProperty Name="evaluateResult" ColumnName="evaluateResult" />
+          <ScalarProperty Name="evaluateDate" ColumnName="evaluateDate" />
+          <ScalarProperty Name="evaluateByStaffID" ColumnName="evaluateByStaffID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="news">
+      <EntityTypeMapping TypeName="antidrugdbModel.news">
+        <MappingFragment StoreEntitySet="news">
+          <ScalarProperty Name="newsID" ColumnName="newsID" />
+          <ScalarProperty Name="newsTitile" ColumnName="newsTitile" />
+          <ScalarProperty Name="newsDetails" ColumnName="newsDetails" />
+          <ScalarProperty Name="newsDate" ColumnName="newsDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staff">
+      <EntityTypeMapping TypeName="antidrugdbModel.staff">
+        <MappingFragment StoreEntitySet="staff">
+          <ScalarProperty Name="staffID" ColumnName="staffID" />
+          <ScalarProperty Name="staffName" ColumnName="staffName" />
+          <ScalarProperty Name="staffLastname" ColumnName="staffLastname" />
+          <ScalarProperty Name="staffAddress" ColumnName="staffAddress" />
+          <ScalarProperty Name="staffTel" ColumnName="staffTel" />
+          <ScalarProperty Name="staffUsername" ColumnName="staffUsername" />
+          <ScalarProperty Name="staffPassword" ColumnName="staffPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

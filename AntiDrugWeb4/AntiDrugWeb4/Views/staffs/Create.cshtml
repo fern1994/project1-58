@@ -1,0 +1,92 @@
+﻿@model AntiDrugWeb4.Models.staff
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h3>Create new staff</h3>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal" style="font-size:15px">
+        <h4>staff</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Staff Name
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.staffName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.staffName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Staff LastName
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.staffLastname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.staffLastname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Staff Address
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.staffAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.staffAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Staff Tel.
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.staffTel, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.staffTel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Staff Username
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.staffUsername, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.staffUsername, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="control-label col-md-2" style="font-size:15px">
+                Staff Password
+            </strong>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.staffPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.staffPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="font-size:15px">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary"  style="font-size:15px"/>
+            </div>
+        </div>
+    </div>
+}
+
+<div style="font-size:15px">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

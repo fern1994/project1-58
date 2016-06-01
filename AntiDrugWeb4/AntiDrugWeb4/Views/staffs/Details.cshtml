@@ -1,0 +1,66 @@
+﻿@model AntiDrugWeb4.Models.staff
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>Staff Details</h3>
+
+<div style="font-size:15px">
+    <h4>staff</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Staff Name
+        </dt> 
+        
+        <dd>
+            @Html.DisplayFor(model => model.staffName)
+        </dd> <br />
+        
+        <dt>
+            Staff Lastname
+        </dt>
+        
+        <dd>
+            @Html.DisplayFor(model => model.staffLastname)
+        </dd> <br />
+
+        <dt>
+            Staff Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.staffAddress)
+        </dd> <br />
+
+        <dt>
+            Staff Tel.
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.staffTel)
+        </dd> <br />
+
+        <dt>
+            Staff Username
+        </dt> 
+
+        <dd>
+            @Html.DisplayFor(model => model.staffUsername)
+        </dd> <br />
+
+        <dt>
+            Staff Password
+        </dt> 
+
+        <dd>
+            @Html.DisplayFor(model => model.staffPassword)
+        </dd> <br />
+
+    </dl>
+</div>
+<p style="font-size:15px">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.staffID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

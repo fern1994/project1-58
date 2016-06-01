@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="antidrugdbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="alertmeeting">
+          <Key>
+            <PropertyRef Name="alertID" />
+          </Key>
+          <Property Name="alertID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="meetingDate" Type="date" Nullable="false" />
+          <Property Name="meetingTitle" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="meetingDetail" Type="text" Nullable="false" />
+          <Property Name="meetingSummary" Type="text" Nullable="false" />
+          <Property Name="meetingByStaffID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="evaluate">
+          <Key>
+            <PropertyRef Name="evaluateID" />
+          </Key>
+          <Property Name="evaluateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="patientIDCard" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="patientName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="patientLastname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="patientAge" Type="int" Nullable="false" />
+          <Property Name="patientAddress" Type="text" Nullable="false" />
+          <Property Name="evaluatePoint" Type="int" Nullable="false" />
+          <Property Name="drugType" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="evaluateResult" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="evaluateDate" Type="date" Nullable="false" />
+          <Property Name="evaluateByStaffID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="newsID" />
+          </Key>
+          <Property Name="newsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="newsTitile" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="newsDetails" Type="text" Nullable="false" />
+          <Property Name="newsDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="staff">
+          <Key>
+            <PropertyRef Name="staffID" />
+          </Key>
+          <Property Name="staffID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="staffName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="staffLastname" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="staffAddress" Type="text" Nullable="false" />
+          <Property Name="staffTel" Type="int" Nullable="false" />
+          <Property Name="staffUsername" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="staffPassword" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="antidrugdbModelStoreContainer">
+          <EntitySet Name="alertmeeting" EntityType="Self.alertmeeting" Schema="antidrugdb" store:Type="Tables" />
+          <EntitySet Name="evaluate" EntityType="Self.evaluate" Schema="antidrugdb" store:Type="Tables" />
+          <EntitySet Name="news" EntityType="Self.news" Schema="antidrugdb" store:Type="Tables" />
+          <EntitySet Name="staff" EntityType="Self.staff" Schema="antidrugdb" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="antidrugdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="alertmeeting">
+          <Key>
+            <PropertyRef Name="alertID" />
+          </Key>
+          <Property Name="alertID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="meetingDate" Type="DateTime" Nullable="false" />
+          <Property Name="meetingTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="meetingDetail" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="meetingSummary" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="meetingByStaffID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="evaluate">
+          <Key>
+            <PropertyRef Name="evaluateID" />
+          </Key>
+          <Property Name="evaluateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="patientIDCard" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="patientName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="patientLastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="patientAge" Type="Int32" Nullable="false" />
+          <Property Name="patientAddress" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="evaluatePoint" Type="Int32" Nullable="false" />
+          <Property Name="drugType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="evaluateResult" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="evaluateDate" Type="DateTime" Nullable="false" />
+          <Property Name="evaluateByStaffID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="newsID" />
+          </Key>
+          <Property Name="newsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="newsTitile" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="newsDetails" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="newsDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="staff">
+          <Key>
+            <PropertyRef Name="staffID" />
+          </Key>
+          <Property Name="staffID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="staffName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="staffLastname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="staffAddress" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="staffTel" Type="Int32" Nullable="false" />
+          <Property Name="staffUsername" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="staffPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="antidrugdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="alertmeeting" EntityType="Self.alertmeeting" />
+          <EntitySet Name="evaluate" EntityType="Self.evaluate" />
+          <EntitySet Name="news" EntityType="Self.news" />
+          <EntitySet Name="staff" EntityType="Self.staff" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="antidrugdbModelStoreContainer" CdmEntityContainer="antidrugdbEntities">
+          <EntitySetMapping Name="alertmeeting">
+            <EntityTypeMapping TypeName="antidrugdbModel.alertmeeting">
+              <MappingFragment StoreEntitySet="alertmeeting">
+                <ScalarProperty Name="alertID" ColumnName="alertID" />
+                <ScalarProperty Name="meetingDate" ColumnName="meetingDate" />
+                <ScalarProperty Name="meetingTitle" ColumnName="meetingTitle" />
+                <ScalarProperty Name="meetingDetail" ColumnName="meetingDetail" />
+                <ScalarProperty Name="meetingSummary" ColumnName="meetingSummary" />
+                <ScalarProperty Name="meetingByStaffID" ColumnName="meetingByStaffID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="evaluate">
+            <EntityTypeMapping TypeName="antidrugdbModel.evaluate">
+              <MappingFragment StoreEntitySet="evaluate">
+                <ScalarProperty Name="evaluateID" ColumnName="evaluateID" />
+                <ScalarProperty Name="patientIDCard" ColumnName="patientIDCard" />
+                <ScalarProperty Name="patientName" ColumnName="patientName" />
+                <ScalarProperty Name="patientLastname" ColumnName="patientLastname" />
+                <ScalarProperty Name="patientAge" ColumnName="patientAge" />
+                <ScalarProperty Name="patientAddress" ColumnName="patientAddress" />
+                <ScalarProperty Name="evaluatePoint" ColumnName="evaluatePoint" />
+                <ScalarProperty Name="drugType" ColumnName="drugType" />
+                <ScalarProperty Name="evaluateResult" ColumnName="evaluateResult" />
+                <ScalarProperty Name="evaluateDate" ColumnName="evaluateDate" />
+                <ScalarProperty Name="evaluateByStaffID" ColumnName="evaluateByStaffID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="news">
+            <EntityTypeMapping TypeName="antidrugdbModel.news">
+              <MappingFragment StoreEntitySet="news">
+                <ScalarProperty Name="newsID" ColumnName="newsID" />
+                <ScalarProperty Name="newsTitile" ColumnName="newsTitile" />
+                <ScalarProperty Name="newsDetails" ColumnName="newsDetails" />
+                <ScalarProperty Name="newsDate" ColumnName="newsDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="staff">
+            <EntityTypeMapping TypeName="antidrugdbModel.staff">
+              <MappingFragment StoreEntitySet="staff">
+                <ScalarProperty Name="staffID" ColumnName="staffID" />
+                <ScalarProperty Name="staffName" ColumnName="staffName" />
+                <ScalarProperty Name="staffLastname" ColumnName="staffLastname" />
+                <ScalarProperty Name="staffAddress" ColumnName="staffAddress" />
+                <ScalarProperty Name="staffTel" ColumnName="staffTel" />
+                <ScalarProperty Name="staffUsername" ColumnName="staffUsername" />
+                <ScalarProperty Name="staffPassword" ColumnName="staffPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

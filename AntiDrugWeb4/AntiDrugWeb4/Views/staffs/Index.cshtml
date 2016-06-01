@@ -1,0 +1,71 @@
+﻿@model IEnumerable<AntiDrugWeb4.Models.staff>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Staff</h2>
+
+<p style="font-size:15px">
+    @Html.ActionLink("Create new staff", "Create")
+
+    @using (Html.BeginForm("Index", "staffs", FormMethod.Get))
+    {
+    <p style="font-size:15px">
+        Staff Name: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter"  class="btn btn-warning" style="font-size:15px"/>
+    </p>
+    } <br />
+</p>
+<table class="table table-hover" style="font-size:15px">
+    <tr>
+        <th>
+            Staff Name
+        </th>
+        <th>
+            Staff Lastname
+        </th>
+        <th>
+            Staff Address
+        </th>
+        <th>
+            Staff Tel.
+        </th>
+        <th>
+            Staff Username
+        </th>
+        <th>
+            Staff Password
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.staffName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.staffLastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.staffAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.staffTel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.staffUsername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.staffPassword)
+        </td>
+        <td style="font-size:15px">
+            @Html.ActionLink("Edit", "Edit", new { id=item.staffID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.staffID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.staffID })
+        </td>
+    </tr>
+}
+
+</table>

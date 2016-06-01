@@ -1,0 +1,98 @@
+﻿@model AntiDrugWeb4.Models.evaluate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>Patient Details</h3>
+
+<div style="font-size:15px">
+    <h4>Patient evaluate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Patient IDCard
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patientIDCard)
+        </dd> <br />
+
+        <dt>
+           Patient Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patientName)
+        </dd> <br />
+
+        <dt>
+            Patient Lastname
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patientLastname)
+        </dd> <br />
+
+        <dt>
+            Patient Age
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patientAge)
+        </dd> <br />
+
+        <dt>
+            Patient Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patientAddress)
+        </dd> <br />
+
+        <dt>
+            Evaluate Point
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.evaluatePoint)
+        </dd> <br />
+
+        <dt>
+            Drug Type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.drugType)
+        </dd> <br />
+
+        <dt>
+            Evaluate Result
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.evaluateResult)
+        </dd> <br />
+
+        <dt>
+           Evaluate Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.evaluateDate)
+        </dd> <br />
+
+        <dt>
+            Evaluate By StaffID
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.evaluateByStaffID)
+        </dd> <br />
+
+    </dl>
+</div>
+<p style="font-size:15px">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.evaluateID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

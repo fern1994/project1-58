@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fern_computer.antidrugvolunteer">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Load">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Lawtype2" />
+        <activity android:name=".Knowledge" />
+        <activity android:name=".Main" />
+        <activity android:name=".GetDrug" />
+        <activity android:name=".Drug" />
+        <activity android:name=".GetAddictphase" />
+        <activity android:name=".AddictPhase" />
+        <activity android:name=".GetLawtype1" />
+        <activity android:name=".Lawtype1" />
+        <activity android:name=".GetLawtype2" />
+        <activity android:name=".Law" />
+        <activity android:name=".Lawtype3" />
+        <activity android:name=".GetLawtype3" />
+        <activity android:name=".Lawtype4" />
+        <activity android:name=".GetLawtype4" />
+        <activity android:name=".Lawtype5" />
+        <activity android:name=".GetLawtype5" />
+        <activity android:name=".News" />
+        <activity android:name=".GetNews" />
+        <activity android:name=".Evaluate" />
+        <activity android:name=".EvaluateForm" />
+        <activity android:name=".EvaluateResult" />
+        <activity android:name=".CalendarSave" />
+        <activity android:name=".Calendardetail" />
+        <activity android:name=".Calendarview" />
+        <activity android:name=".CalendarMain"></activity>
+    </application>
+
+</manifest>
